@@ -1,0 +1,22 @@
+{
+  "name": "amazon_tests",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "cypress run"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "cucumber": "^7.0.0-rc.0",
+    "cypress": "^6.5.0",
+    "cypress-cucumber-preprocessor": "^4.0.1",
+    "eslint": "^7.20.0",
+    "eslint-config-google": "^0.14.0"
+  },
+  "cypress-cucumber-preprocessor": {
+    "step_definitions": "cypress/integration/features/step_definitions/**/"
+  }
+}

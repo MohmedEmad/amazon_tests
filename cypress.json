@@ -1,0 +1,7 @@
+{
+  "baseUrl": "https://www.amazon.com",
+  "testFiles": "**/*.{feature,features}",
+  "ignoreTestFiles": ["**/stepDefinitions/*","*.js", "*.md"],
+  "viewportWidth": 1360,
+  "viewportHeight": 790
+}
