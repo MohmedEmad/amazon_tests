@@ -3,5 +3,15 @@
   "testFiles": "**/*.{feature,features}",
   "ignoreTestFiles": ["**/stepDefinitions/*","*.js", "*.md"],
   "viewportWidth": 1360,
-  "viewportHeight": 790
+  "viewportHeight": 790,
+
+
+
+  "reporter": "mochawesome",
+  "reporterOptions": {
+    "overwrite": false,
+    "html": false,
+    "json": true
+  }
 }
+

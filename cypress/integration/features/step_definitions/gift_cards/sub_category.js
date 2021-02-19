@@ -22,7 +22,7 @@ Given('I click on See all results link', (subCategoryName) => {
     subCategoryPage.clickSeeAllResultsLink();
 });
 
-Given('The total number of results should match the total displayed products', () => {
+Then('The total number of results should match the total displayed products', () => {
     subCategoryFullPage.getAllResultsTextBox().invoke('text')
         .then((resultsText) => {
             const values = [];
@@ -44,7 +44,7 @@ Given('The total number of results should match the total displayed products', (
                 });
         });
 
-    Given('The number of products on the page should match the displayed number', (subCategoryName) => {
+    Then('The number of products on the page should match the displayed number on Main page', (subCategoryName) => {
         subCategoryPage.getAllResultsTextBox().invoke('text')
             .then((text) => {
                 subCategoryPage.getAllProductsList()
@@ -52,7 +52,16 @@ Given('The total number of results should match the total displayed products', (
             });
     });
 
-    Given('The total number of results should match the total number of results at full sub-category page', (subCategoryName) => {
+
+    Then('The number of products on the page should match the displayed number on Full page', (subCategoryName) => {
+        subCategoryFullPage.getAllResultsTextBox().invoke('text')
+            .then((text) => {
+                subCategoryFullPage.getAllProductsList()
+                    .should('have.length', parseInt(text.toString().split(' ')[0].replace('1-', '')));
+            });
+    });
+
+    Then('The total number of results should match the total number of results at full sub-category page', (subCategoryName) => {
         subCategoryPage.getAllResultsTextBox().invoke('text')
             .then((textFromMainPage) => {
                 subCategoryPage.clickSeeAllResultsLink().getAllResultsTextBox().invoke('text')
