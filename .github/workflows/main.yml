@@ -26,7 +26,7 @@ jobs:
     - name: Merge test results into one
       run: npm run merge_reports
     - name: Generate HTML report
-      run: npm run report:generate_mochawesome_report
+      run: npm run generate_mochawesome_report
     - name: Deploy report page
       uses: peaceiris/actions-gh-pages@v3
       with:
