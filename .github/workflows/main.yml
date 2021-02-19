@@ -27,3 +27,7 @@ jobs:
         with:
           name: cypress-videos
           path: cypress/videos
+      # Deploy report page
+      - uses: peaceiris/actions-gh-pages@v3
+        with:
+          publish_dir: ./public
