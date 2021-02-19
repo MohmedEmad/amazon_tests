@@ -27,7 +27,15 @@ jobs:
         with:
           name: cypress-videos
           path: cypress/videos
+          
+      - name: copying screenshots and videos to public folder    
+        run: 
+          mkdir public
+          cp -r cypress/videos public/videos
+          cp -r cypress/screenshots public/screenshots
+          
       # Deploy report page
-      - uses: peaceiris/actions-gh-pages@v3
+      - name: Deploy report
+        uses: peaceiris/actions-gh-pages@v3
         with:
           publish_dir: ./public
