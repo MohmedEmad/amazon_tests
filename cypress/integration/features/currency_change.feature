@@ -1,8 +1,9 @@
+@CurrencyChange
 Feature: Currency Change
 
   Background: Amazon Main Page is opened
-    Given I'm at Home Page
-    Given I'm at Language & Currency Setup Page
+    Given I am at Home Page
+    Given I am at Language & Currency Setup Page
     And I open currencies picker
     And I choose "AED - Arab Emirates Dirham"
     And I click Save Changes Button
@@ -15,5 +16,5 @@ Feature: Currency Change
 
 
   Scenario: Check the selected currency displayed for the products' price at Today's Deals Page
-    When I am at Today's Deals Page
+    When I am at Todays Deals Page
     Then Currency "AED" should be displayed for the product price at Today Deals Page

@@ -2,8 +2,10 @@ import GiftCardsPage from './GiftCardsPage';
 
 class AccountListsPage {
 
+    GIFT_CARDS_CARD = 'div[data-card-identifier=GiftCards]'
+
     clickOnGiftCardsCard() {
-        cy.get('div[data-card-identifier=GiftCards]').click();
+        cy.get(GIFT_CARDS_CARD).click();
         return new GiftCardsPage();
     }
 }

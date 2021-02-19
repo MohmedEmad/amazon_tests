@@ -1,7 +1,8 @@
+@ResultsCounter
 Feature: Results Number Displaying
 
   Background: Amazon Main Page is opened
-    Given I'm at Home Page
+    Given I am at Home Page
 
   Scenario: Check the total displayed number of results for category Smart Home | Home Entertainment
     Given I open at All Categories list

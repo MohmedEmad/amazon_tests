@@ -1,21 +1,22 @@
 import {Given, When, Then} from 'cypress-cucumber-preprocessor/steps';
-import HomePage from '../../../../page_objects/HomePage';
-import SubCategoryPage from '../../../../page_objects/SubCategoryPage';
-import SubCategoryFullPage from '../../../../page_objects/SubCategoryFullPage';
+import HomePage from '../page_objects/HomePage';
+import SubCategoryPage from '../page_objects/SubCategoryPage';
+import SubCategoryFullPage from '../page_objects/SubCategoryFullPage';
 
+const homePage = new HomePage();
 const subCategoryPage = new SubCategoryPage();
 const subCategoryFullPage = new SubCategoryFullPage();
 
-Given(/^I open at All Categories list$/, () => {
-    new HomePage().clickOnAllCategoriesMenu();
+Given('I open at All Categories list', () => {
+    homePage.clickOnAllCategoriesMenu();
 });
 
 Given('I open {string} Category', (categoryName) => {
-    new HomePage().clickOnCategory(categoryName);
+    homePage.clickOnCategory(categoryName);
 });
 
 Given('I open {string} sub-category Page', (subCategoryName) => {
-    new HomePage().clickOnSubCategoryMenu(subCategoryName);
+    homePage.clickOnSubCategoryMenu(subCategoryName);
 });
 
 Given('I click on See all results link', (subCategoryName) => {
