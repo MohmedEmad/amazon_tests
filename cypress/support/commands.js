@@ -24,8 +24,8 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
 
-import HomePage from '../page_objects/HomePage';
-import SignInPage from '../page_objects/SignInPage';
+import HomePage from '../integration/page_objects/HomePage';
+import SignInPage from '../integration/page_objects/SignInPage';
 
 Cypress.Commands.add('login', (user) => {
   new HomePage().clickOnSignInButton();
