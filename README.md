@@ -41,5 +41,7 @@ docker run --shm-size 512M amazon_tests_chrome --browser chrome -> will run amaz
 docker run --shm-size 512M amazon_tests_electron --headless -> will run amazon_tests_electron image inside docker container in Electron browser headless mode <br />
 docker-compose up -> will run amazon_tests_chrome and amazon_tests_electron images (predefined setup, please check docker-compose.yml file) <br />
 
+You can use other docker commands like docker ps, docker images, docker exec, docker attach, etc.
+
 Note: you can check pachage.json file scripts section for more predefined scripts and short commands to run (example: npm run e2e:chrome -> will will run tests in Chrome browser)
 
