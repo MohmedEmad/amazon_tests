@@ -13,19 +13,19 @@ Given('I am at Language & Currency Setup Page', () => {
     homePage.clickOnLanguageCurrencyLink();
 });
 
-Given('I open currencies picker', () => {
+And('I open currencies picker', () => {
     languageCurrenctPage.clickOnCurrencyButton();
 });
 
-Given('I choose {string}', (currencyName) => {
+And('I choose {string}', (currencyName) => {
     languageCurrenctPage.chooseCurrency(currencyName);
 });
 
-Given('I click Save Changes Button', () => {
+And('I click Save Changes Button', () => {
     languageCurrenctPage.clickOnSaveButton();
 });
 
-Given('Currency {string} should be displayed for the product price at Today Deals Page', (currencySymbol) => {
+Then('Currency {string} should be displayed for the product price at Today Deals Page', (currencySymbol) => {
     todayDealsPage.getPricesList().first()
         .invoke('text')
         .then((text1) => {
@@ -33,7 +33,7 @@ Given('Currency {string} should be displayed for the product price at Today Deal
         });
 });
 
-Given('Currency {string} should be displayed for the product price at sub-category page', (currencySymbol) => {
+Then('Currency {string} should be displayed for the product price at sub-category page', (currencySymbol) => {
     subCategoryPage.getPriceSymbols().first()
         .invoke('text')
         .then((text1) => {
@@ -41,6 +41,6 @@ Given('Currency {string} should be displayed for the product price at sub-catego
         });
 });
 
-Given('I am at Todays Deals Page', () => {
+Given('I am at Today Deals Page', () => {
 homePage.clickOnTodayDealsLink();
 });

@@ -11,15 +11,15 @@ Given('I open at All Categories list', () => {
     homePage.clickOnAllCategoriesMenu();
 });
 
-Given('I open {string} Category', (categoryName) => {
+And('I open {string} Category', (categoryName) => {
     homePage.clickOnCategory(categoryName);
 });
 
-Given('I open {string} sub-category Page', (subCategoryName) => {
+And('I open {string} sub-category Page', (subCategoryName) => {
     homePage.clickOnSubCategoryMenu(subCategoryName);
 });
 
-Given('I click on See all results link', (subCategoryName) => {
+And('I click on See all results link', (subCategoryName) => {
     subCategoryPage.clickSeeAllResultsLink();
 });
 
@@ -52,7 +52,6 @@ Then('The total number of results should match the total displayed products', ()
                     .should('have.length', parseInt(text.toString().split(' ')[0].replace('1-', '')));
             });
     });
-
 
     Then('The number of products on the page should match the displayed number on Full page', (subCategoryName) => {
         subCategoryFullPage.getAllResultsTextBox().invoke('text')

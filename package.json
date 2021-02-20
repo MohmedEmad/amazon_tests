@@ -9,7 +9,13 @@
     "merge_reports": "mochawesome-merge --reportDir mochawesome-report > mochawesome-report/output.json",
     "generate_mochawesome_report": "marge mochawesome-report/output.json",
     "e2e_mochawesome": "cypress run; npm run merge_reports; npm run generate_mochawesome_report",
-    "one_feature": "cypress run --spec cypress/integration/features/sub-category.feature"
+
+    "docker:run:chrome:electron": "docker-compose up",
+    "docker:build:chrome": "docker build -t amazon_tests_chrome .",
+    "docker:build:electron": "docker build -t amazon_tests_electron .",
+    "docker:run:chrome": "docker run --shm-size 512M amazon_tests_chrome --browser chrome",
+    "docker:run:electron": "docker run --shm-size 512M amazon_tests_electron --headless"
+
   },
   "keywords": [],
   "author": "",
@@ -21,7 +27,6 @@
     "cypress-cucumber-preprocessor": "^4.0.1",
     "cypress-multi-reporters": "^1.4.0",
     "eslint": "^7.20.0",
-    "eslint-config-google": "^0.14.0",
     "mocha": "^8.3.0",
     "mocha-junit-reporter": "^2.0.0",
     "mochawesome": "^6.2.2",
@@ -29,7 +34,6 @@
     "mochawesome-report-generator": "^5.2.0"
   },
   "cypress-cucumber-preprocessor": {
-    "nonGlobalStepDefinitions": true,
     "step_definitions": "cypress/integration/step_definitions/**"
   },
   "repository": {
