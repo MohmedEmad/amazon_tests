@@ -31,7 +31,7 @@ node report.js - run the command after test run, it will generate cucumber repor
 
 1. Run docker using offciial guldes: https://www.docker.com/
 2. Go to project folder: cd amazon_tests
-3. Install dependencied (if not intalled): npm install
+3. Install dependencied (if not installed): npm install
 
 #### Commands:
 
