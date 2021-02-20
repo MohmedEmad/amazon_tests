@@ -14,7 +14,7 @@ Feature: Results Number Displaying
   Scenario: Check the total displayed number of results on main sub-category page
     Then The number of products on the page should match the displayed number on Main page
 
-  Scenario: Check the total displayed number of results on main sub-category page
+  Scenario: Check the total displayed number of results on full sub-category page
     When I click on See all results link
     Then The number of products on the page should match the displayed number on Full page
 

@@ -11,7 +11,7 @@ class SubCategoryPage {
 
     clickSeeAllResultsLink() {
         cy.get('.a-box-inner > a > span').contains('See all results')
-            .click({scrollBehavior: false, force: true});
+            .click({scrollBehavior: false, force: true}).wait(2000);
         return new SubCategoryFullPage();
     }
 
