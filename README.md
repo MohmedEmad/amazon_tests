@@ -10,7 +10,7 @@ This guide assumes you have node with npm and git installed:
 1. Clone my repository: git clone git@github.com:andge86/amazon_tests.git
 2. Go to project folder: cd amazon_tests
 3. Install dependencied: npm install
-4. Execute the command from the list:
+4. Execute the command from the Basic Cypress Commands list below
 
 #### Basic Cypress Commands
 
@@ -23,7 +23,7 @@ cypress-tags run -e TAGS="ResultsCounter" -> will run only Results Number Displa
 
 Note: you can use other commands predefined in Cypress official documentation: https://docs.cypress.io/guides/guides/command-line.html#cypress-run
 
-Reporting
+## Reporting
 
 node report.js - run the command after test run, it will generate cucumber report
 
@@ -41,5 +41,5 @@ docker run --shm-size 512M amazon_tests_chrome --browser chrome -> will run amaz
 docker run --shm-size 512M amazon_tests_electron --headless -> will run amazon_tests_electron image inside docker container in Electron browser headless mode <br />
 docker-compose up -> will run amazon_tests_chrome and amazon_tests_electron images (predefined setup, please check docker-compose.yml file) <br />
 
-Note: you can check pachage.json file scripts section for more predefined scripts and shot commands to run (example: npm run e2e:chrome -> will will run tests in Chrome browser)
+Note: you can check pachage.json file scripts section for more predefined scripts and short commands to run (example: npm run e2e:chrome -> will will run tests in Chrome browser)
 
