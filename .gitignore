@@ -1,4 +1,4 @@
 # Project exclude paths
 node_modules/
 cypress/screenshots/
-cypress/videos/
+cypress/videos/node_modules/

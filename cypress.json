@@ -1,14 +1,5 @@
 {
   "baseUrl": "https://www.amazon.com",
-  "testFiles": "**/*.feature",
-  "viewportWidth": 1360,
-  "viewportHeight": 790,
-
-  "reporter": "mochawesome",
-  "reporterOptions": {
-    "overwrite": false,
-    "html": false,
-    "json": true
-  }
+  "testFiles": "**/*.feature"
 }
 

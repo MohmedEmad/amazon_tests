@@ -3,11 +3,13 @@ module.exports = {
     'browser': true,
     'es2021': true,
   },
-  'parserOptions': {
-    'ecmaVersion': 12,
-    'sourceType': 'module',
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "sourceType": "module",
+    "allowImportExportEverywhere": false,
+    "codeFrame": true
   },
-  'rules': {
-    'require-jsdoc': 0,
-  },
+  "rules": {
+    "strict": 0
+  }
 };
