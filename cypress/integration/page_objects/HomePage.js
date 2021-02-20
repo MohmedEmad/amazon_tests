@@ -7,46 +7,46 @@ export default class HomePage {
 
   ACCOUNT_AND_LISTS = '#nav-link-accountList-nav-line-1';
   SIGN_IN_BUTTON = '#nav-signin-tooltip';
-  allCategoriesMenu = '#nav-hamburger-menu';
+  ALL_CATEGORIES_MENU = '#nav-hamburger-menu';
   CATEGORIES_LIST = '.hmenu-visible >> .hmenu-item > div';
   SUB_CATEGORIES_LIST = '.hmenu-item';
   LANGUAGE_AND_CURRENCY_LINK = '.icp-nav-flag';
   TOP_MENU_LINKS = 'a[data-csa-c-type = link]';
 
   clickOnAccountAndLists() {
-    cy.get(ACCOUNT_AND_LISTS).click();
+    cy.get(this.ACCOUNT_AND_LISTS).click();
     return new AccountsAndListsPage();
   }
 
   clickOnAllCategoriesMenu() {
-    cy.get(allCategoriesMenu).click();
+    cy.get(this.ALL_CATEGORIES_MENU).click();
     return this;
   }
 
   clickOnLanguageCurrencyLink() {
-    cy.get(LANGUAGE_AND_CURRENCY_LINK).click();
+    cy.get(this.LANGUAGE_AND_CURRENCY_LINK).click();
     return new LanguageCurrencyPage();
   }
 
   clickOnTodayDealsLink() {
-    cy.get(TOP_MENU_LINKS).contains('Today\'s Deals').click();
+    cy.get(this.TOP_MENU_LINKS).contains('Today\'s Deals').click();
     return new LanguageCurrencyPage();
   }
 
   clickOnCategory(categoryName) {
-    cy.get(CATEGORIES_LIST).contains(categoryName).wait(1000)
+    cy.get(this.CATEGORIES_LIST).contains(categoryName).wait(1000)
         .click({scrollBehavior: true});
     return this;
   }
 
   clickOnSubCategoryMenu(subCategoryName) {
-    cy.get(SUB_CATEGORIES_LIST).contains(subCategoryName).wait(1000)
+    cy.get(this.SUB_CATEGORIES_LIST).contains(subCategoryName).wait(1000)
         .click({scrollBehavior: true});
     return new SubCategoryPage();
   }
 
   clickOnSignInButton() {
-    cy.get(SIGN_IN_BUTTON).click();
+    cy.get(this.SIGN_IN_BUTTON).click();
     return new SignInPage();
   }
 }

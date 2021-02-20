@@ -21,10 +21,10 @@ Given('I am at Account & Lists Page', () => {
     homePage.clickOnAccountAndLists();
 });
 
-When('I am at Gift Cards Page', () => {
+And('I am at Gift Cards Page', () => {
     accountListsPage.clickOnGiftCardsCard();
 });
 
 Then('Gift Card balance is {string}', (balance) => {
-    giftCardsPage.giftCardsBalanceTextBox().should('contain.text', balance);;
+    giftCardsPage.giftCardsBalanceTextBox().should('contain.text', balance);
 });

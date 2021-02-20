@@ -1,0 +1,31 @@
+version: '3'
+
+services:
+
+  amazon-tests-chrome:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: "--browser chrome"
+    volumes:
+      - ./cypress:/cypress
+      - ./cypress.json:/cypress.json
+      - ./package.json:/package.json
+      - type: tmpfs
+        target: /dev/shm
+        tmpfs:
+          size: 1000000000 # ~1gb
+
+  amazon-tests-electron:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: "--headless"
+    volumes:
+      - ./cypress:/cypress
+      - ./cypress.json:/cypress.json
+      - ./package.json:/package.json
+      - type: tmpfs
+        target: /dev/shm
+        tmpfs:
+          size: 1000000000 # ~1gb

@@ -2,18 +2,22 @@ import HomePage from './HomePage';
 
 class LanguageCurrencyPage {
 
+  CURRENCY_BUTTON = '[data-action = a-dropdown-button]'
+  CURRENCY_DROP_DOWN_LIST = '.a-dropdown-item'
+  SAVE_BUTTON = '.a-button-input'
+
   clickOnCurrencyButton() {
-    cy.get('[data-action = a-dropdown-button]').click();
+    cy.get(this.CURRENCY_BUTTON).click();
     return this;
   }
 
   chooseCurrency(currencyName) {
-    cy.get('.a-dropdown-item').contains(currencyName).click();
+    cy.get(this.CURRENCY_DROP_DOWN_LIST).contains(currencyName).click();
     return this;
   }
 
   clickOnSaveButton() {
-    cy.get('.a-button-input').click({force: true, scrollBehavior: false});
+    cy.get(this.SAVE_BUTTON).click({force: true, scrollBehavior: false});
     return new HomePage();
   }
 }

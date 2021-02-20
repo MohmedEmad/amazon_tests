@@ -1,11 +1,15 @@
 class SubCategoryFullPage {
 
+    ALL_PRODUCTS_LIST = '[data-component-type = s-search-result]'
+    LAST_PAGE_NUMBER_BUTTON = '[aria-disabled=true]'
+    NEXT_BUTTON = '.a-last'
+
     getAllProductsList() {
-        return cy.get('[data-component-type = s-search-result]');
+        return cy.get(this.ALL_PRODUCTS_LIST);
     }
 
     getALastPageNumberButton() {
-        return cy.get('[aria-disabled=true]');
+        return cy.get(this.LAST_PAGE_NUMBER_BUTTON);
     }
 
     getAllResultsTextBox() {
@@ -13,7 +17,7 @@ class SubCategoryFullPage {
     }
 
     clickOnNextButton() {
-        cy.get('.a-last').click().wait(2000);
+        cy.get(this.NEXT_BUTTON).click().wait(2000);
         return this;
     }
 }
