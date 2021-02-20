@@ -17,7 +17,7 @@ This guide assumes you have node with npm and git installed:
 
 **npx cypress open** -> will open Cypress desktop runner app <br />
 **npx cypress run** -> headless run in Electron browser <br />
-**npx cypress run** --browser chrome -> will run tests in Chrome browser <br />
+**npx cypress run --browser chrome** -> will run tests in Chrome browser <br />
 **npx cypress-tags run -e TAGS="@CurrencyChange"** -> will run only Currency Symbol Change feature scenarios (tests) <br />
 **npx cypress-tags run -e TAGS="@GiftCards"** -> will run only Gift Cards Balance feature scenarios (tests) <br />
 **npx cypress-tags run -e TAGS="ResultsCounter"** -> will run only Results Number Displaying feature scenarios (tests) <br />
