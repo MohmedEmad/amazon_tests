@@ -48,5 +48,5 @@ Note: you can use other commands predefined in Cypress official documentation: h
 
 You can use other docker commands like **docker ps, docker images, docker exec, docker attach**, etc.
 
-Note: you can check pachage.json file scripts section for more predefined scripts and short commands to run (example: **npm run e2e:chrome** -> will will run tests in Chrome browser)
+Note: you can check package.json file scripts section for more predefined scripts and short commands to run (example: **npm run e2e:chrome** -> will run tests in Chrome browser)
 
