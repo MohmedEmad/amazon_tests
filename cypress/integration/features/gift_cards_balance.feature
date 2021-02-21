@@ -7,5 +7,10 @@ Feature: Gift Cards Balance
 
   Scenario: Check your gift card's balance is $0.00
     When I am at Account & Lists Page
+    And I am at Gift Cards section
+    Then Gift Card balance at Gift Cards section is "USD 0.00"
+
+  Scenario: Check your gift card's balance is $0.00
+    When I am at Account & Lists Page
     And I am at Gift Cards Page
-    Then Gift Card balance is "USD 0.00"
+    Then Gift Card balance at Gift Page is "USD 0.00"

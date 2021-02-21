@@ -2,6 +2,8 @@ import AccountsAndListsPage from './AccountListsPage';
 import SignInPage from './SignInPage';
 import SubCategoryPage from './SubCategoryPage';
 import LanguageCurrencyPage from './LanguageCurrencyPage';
+import GiftCardsPage from './GiftCardsPage';
+import TodayDealsPage from './TodayDealsPage';
 
 export default class HomePage {
 
@@ -30,7 +32,12 @@ export default class HomePage {
 
   clickOnTodayDealsLink() {
     cy.get(this.TOP_MENU_LINKS).contains('Today\'s Deals').click();
-    return new LanguageCurrencyPage();
+    return new TodayDealsPage();
+  }
+
+  clickOnGiftCardsLink() {
+    cy.get(this.TOP_MENU_LINKS).contains('Gift Cards').click();
+    return new GiftCardsPage();
   }
 
   clickOnCategory(categoryName) {

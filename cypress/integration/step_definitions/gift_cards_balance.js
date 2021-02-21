@@ -10,21 +10,28 @@ const accountListsPage = new AccountListsPage();
 const giftCardsPage = new GiftCardsPage();
 
 Given('I am at Home Page', () => {
-    basePage.openHomePage();
+  basePage.openHomePage();
 });
 
 Given('I am logged in as {string} and {string}', (username, password) => {
-    cy.login({username: username, password: password});
+  cy.login({username: username, password: password});
 });
 
 Given('I am at Account & Lists Page', () => {
-    homePage.clickOnAccountAndLists();
+  homePage.clickOnAccountAndLists();
 });
 
-And('I am at Gift Cards Page', () => {
-    accountListsPage.clickOnGiftCardsCard();
+And('I am at Gift Cards section', () => {
+  accountListsPage.clickOnGiftCardsCard();
 });
 
-Then('Gift Card balance is {string}', (balance) => {
-    giftCardsPage.giftCardsBalanceTextBox().should('contain.text', balance);
+Then('Gift Card balance at Gift Cards section is {string}', (balance) => {
+  accountListsPage.giftCardsBalanceTextBox().should('contain.text', balance);
+});
+When('I am at Gift Cards Page', () => {
+  homePage.clickOnGiftCardsLink();
+});
+
+Then('Gift Card balance at Gift Page is {string}', (balance) => {
+  giftCardsPage.giftCardsBalanceTextBox().should('contain.text', balance);
 });
