@@ -35,7 +35,7 @@ Latest Report on HitHub Pages: https://andge86.github.io/amazon_tests/
 
 ## Docker Commands
 
-1. Run docker using offciial guldes: https://www.docker.com/
+1. Run docker using official guldes: https://www.docker.com/
 2. Go to project folder: **cd amazon_tests**
 3. Install dependencied (if not installed): **npm install**
 
