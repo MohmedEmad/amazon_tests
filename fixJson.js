@@ -69,17 +69,17 @@ failingFeatures.forEach(feature => {
       myStep.embeddings = [];
       myStep.embeddings.push({data: base64Image, mime_type: 'image/png'});
     }
-
-    // find my video
-    const vidData = fs
-      .readFileSync(path.join(videosPath, videosMap[feature]))
-      .toString('base64');
-    if (vidData) {
-      const html = `<video controls width="500"><source type="video/mp4" src="data:video/mp4;base64,${vidData}"> </video>`;
-      const encodedHtml = Buffer.from(html, 'binary').toString('base64');
-      myStep.embeddings.push({data: encodedHtml, mime_type: 'text/html'});
-    }
-
+    /*
+        // find my video
+        const vidData = fs
+          .readFileSync(path.join(videosPath, videosMap[feature]))
+          .toString('base64');
+        if (vidData) {
+          const html = `<video controls width="500"><source type="video/mp4" src="data:video/mp4;base64,${vidData}"> </video>`;
+          const encodedHtml = Buffer.from(html, 'binary').toString('base64');
+          myStep.embeddings.push({data: encodedHtml, mime_type: 'text/html'});
+        }
+     */
     // write me back out again
     fs.writeFileSync(
       path.join(jsonPath, jsonNames[feature]),
