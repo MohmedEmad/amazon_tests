@@ -1,7 +1,9 @@
-import AccountsAndListsPage from './AccountListsPage';
+import AccountListsPage from './AccountListsPage';
 import SignInPage from './SignInPage';
-import SubCategoryPage from './SubCategoryPage';
+import SubCategoryMainPage from './SubCategoryMainPage';
 import LanguageCurrencyPage from './LanguageCurrencyPage';
+import GiftCardsPage from './GiftCardsPage';
+import TodayDealsPage from './TodayDealsPage';
 
 export default class HomePage {
 
@@ -15,7 +17,7 @@ export default class HomePage {
 
   clickOnAccountAndLists() {
     cy.get(this.ACCOUNT_AND_LISTS).click();
-    return new AccountsAndListsPage();
+    return new AccountListsPage();
   }
 
   clickOnAllCategoriesMenu() {
@@ -29,20 +31,25 @@ export default class HomePage {
   }
 
   clickOnTodayDealsLink() {
-    cy.get(this.TOP_MENU_LINKS).contains('Today\'s Deals').click();
-    return new LanguageCurrencyPage();
+    cy.get(this.TOP_MENU_LINKS).contains('Today\'s Deals').click({force: true});
+    return new TodayDealsPage();
+  }
+
+  clickOnGiftCardsLink() {
+    cy.get(this.TOP_MENU_LINKS).contains('Gift Cards').click({force: true});
+    return new GiftCardsPage();
   }
 
   clickOnCategory(categoryName) {
     cy.get(this.CATEGORIES_LIST).contains(categoryName).wait(1000)
-        .click({scrollBehavior: true});
+      .click({scrollBehavior: true});
     return this;
   }
 
   clickOnSubCategoryMenu(subCategoryName) {
     cy.get(this.SUB_CATEGORIES_LIST).contains(subCategoryName).wait(1000)
-        .click({scrollBehavior: true});
-    return new SubCategoryPage();
+      .click({scrollBehavior: true});
+    return new SubCategoryMainPage();
   }
 
   clickOnSignInButton() {
