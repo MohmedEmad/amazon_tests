@@ -2,7 +2,7 @@
 const fs = require('fs-extra');
 const dir = './cucumber_report/html';
 
-if (fs.existsSync(dir)){
+if (fs.existsSync(dir)) {
   fs.removeSync(dir);
 }
 
@@ -18,7 +18,9 @@ const options = {
   scenarioTimestamp: true,
   launchReport: true,
   metadata: {
-  }
+    'App Version': '2.4.1',
+    'Test Environment': 'PROD'
+  },
 };
 
 // Generate report

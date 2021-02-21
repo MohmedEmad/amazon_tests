@@ -1,23 +1,26 @@
 @ResultsCounter
 Feature: Results Number Displaying
 
-  Background: I am on sub-category page
-    Given I am at Home Page
-    And I open at All Categories list
-    And I open "Smart Home" Category
-    When I open "Home Entertainment" sub-category Page
+  Background: I am at category page
+    Given I am at Home page
+    And I open All Categories list
+    And I open "Smart Home" category
 
-  Scenario: Check the total displayed number of results for category Smart Home | Home Entertainment
-    And I click on See all results link
-    Then The total number of results should match the total displayed products
-
-  Scenario: Check the total displayed number of results on main sub-category page
-    Then The number of products on the page should match the displayed number on Main page
-
-  Scenario: Check the total displayed number of results on full sub-category page
+  Scenario: Displayed products number at all sub-category full pages should match the total results counter at first sub-category full page
+    Given I open "Home Entertainment" sub-category main page
     When I click on See all results link
-    Then The number of products on the page should match the displayed number on Full page
+    Then Displayed products number at all sub-category full pages should match the total results counter at first sub-category full page
 
-  Scenario: Check the total displayed number of results on main sub-category page and full sub-category page
-    Then The total number of results should match the total number of results at full sub-category page
+  Scenario: Displayed products number at sub-category main page should match the page results counter
+    When I open "Home Entertainment" sub-category main page
+    Then Displayed products number at "sub-category main" page should match the page results counter
+
+  Scenario: Displayed products number at sub-category full page should math the page results counter
+    Given I open "Home Entertainment" sub-category main page
+    When I click on See all results link
+    Then Displayed products number at "sub-category full" page should match the page results counter
+
+  Scenario: Total results counter on sub-category main page should match total results counter at first sub-category full page
+    When I open "Home Entertainment" sub-category main page
+    Then Total results counter on sub-category main page should match total results counter at first sub-category full page
 

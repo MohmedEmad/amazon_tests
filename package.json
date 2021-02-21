@@ -8,6 +8,7 @@
     "e2e:chrome": "cypress run --browser chrome",
     "report:generate": "node report.js",
     "e2e:chrome:report": "npm run data:clear ; npm run e2e:chrome ; npm run report:generate",
+    "e2e:headless:report": "npm run data:clear ; npm run e2e:headless ; npm run report:generate",
     "docker:run:chrome:electron": "docker-compose up",
     "docker:build:chrome": "docker build -t amazon_tests_chrome .",
     "docker:build:electron": "docker build -t amazon_tests_electron .",
@@ -16,7 +17,7 @@
     "eslint:fix": "./node_modules/.bin/eslint --fix --ignore-path .gitignore ."
   },
   "keywords": [],
-  "author": "",
+  "author": "Andrii N",
   "license": "ISC",
   "description": "",
   "devDependencies": {

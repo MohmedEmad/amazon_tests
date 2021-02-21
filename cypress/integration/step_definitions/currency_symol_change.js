@@ -2,31 +2,31 @@ import {Given, When, Then} from 'cypress-cucumber-preprocessor/steps';
 import HomePage from '../page_objects/HomePage';
 import LanguageCurrencyPage from '../page_objects/LanguageCurrencyPage';
 import TodayDealsPage from '../page_objects/TodayDealsPage';
-import SubCategoryPage from '../page_objects/SubCategoryPage';
+import SubCategoryMainPage from '../page_objects/SubCategoryMainPage';
 import SubCategoryFullPage from '../page_objects/SubCategoryFullPage';
 import GiftCardsPage from '../page_objects/GiftCardsPage';
 
 const homePage = new HomePage();
-const languageCurrenctPage = new LanguageCurrencyPage();
+const languageCurrencyPage = new LanguageCurrencyPage();
 const todayDealsPage = new TodayDealsPage();
-const subCategoryPage = new SubCategoryPage();
+const subCategoryPage = new SubCategoryMainPage();
 const subCategoryFullPage = new SubCategoryFullPage();
 const giftCardsPage = new GiftCardsPage();
 
-Given('I am at Language & Currency Setup Page', () => {
+Given('I am at Language & Currency Setup page', () => {
   homePage.clickOnLanguageCurrencyLink();
 });
 
 And('I open currencies picker', () => {
-  languageCurrenctPage.clickOnCurrencyButton();
+  languageCurrencyPage.clickOnCurrencyButton();
 });
 
 And('I choose {string}', (currencyName) => {
-  languageCurrenctPage.chooseCurrency(currencyName);
+  languageCurrencyPage.chooseCurrency(currencyName);
 });
 
 And('I click Save Changes Button', () => {
-  languageCurrenctPage.clickOnSaveButton();
+  languageCurrencyPage.clickOnSaveButton();
 });
 
 Then('Currency {string} should be displayed for the product price at Today Deals Page',
@@ -38,7 +38,7 @@ Then('Currency {string} should be displayed for the product price at Today Deals
       });
   });
 
-Then('Currency {string} should be displayed for the product price at {string} page',
+Then('Currency {string} should be displayed near product price at {string} page',
   (currencySymbol, pageType) => {
     let page;
     switch (pageType) {
@@ -60,11 +60,11 @@ Then('Currency {string} should be displayed for the product price at {string} pa
       });
   });
 
-Given('I am at Today Deals Page', () => {
+Given('I am at Today Deals page', () => {
   homePage.clickOnTodayDealsLink();
 });
 
-Then('Currency {string} should be displayed for the product price at Today Deals page',
+Then('Currency {string} should be displayed near products price at Today Deals page',
   (currencySymbol) => {
     todayDealsPage.getPricesList().first().should('contain.text', currencySymbol);
   });
