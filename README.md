@@ -26,7 +26,7 @@ Note: you can use other commands predefined in Cypress official documentation: h
 
 ## Reporting
 
-**node report.js** - run the command after test run, it will generate cucumber report
+**node report.js** - run the command after test run, it will generate cucumber report  <br />
 Latest Report on HitHub Pages: https://andge86.github.io/amazon_tests/
 
 ## Code Quality
