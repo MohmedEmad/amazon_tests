@@ -6,7 +6,7 @@
     "data:clear": "rm -rf cypress/screenshots cypress/videos cypress/results cucumber_report",
     "e2e:headless": "cypress run",
     "e2e:chrome": "cypress run --browser chrome",
-    "report:generate": "node report.js",
+    "report:generate": "node fixJson.js ; node report.js",
     "e2e:chrome:report": "npm run data:clear ; npm run e2e:chrome ; npm run report:generate",
     "e2e:headless:report": "npm run data:clear ; npm run e2e:headless ; npm run report:generate",
     "docker:run:chrome:electron": "docker-compose up",
